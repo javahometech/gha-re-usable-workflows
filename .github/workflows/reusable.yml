@@ -6,6 +6,9 @@ on:
                 description: Enter the name
                 required: true
                 type: string
+        secrets:
+            my_secret:
+                description: The secret to use in this workflow
 
 jobs:
     greeting:
@@ -13,3 +16,5 @@ jobs:
         steps:
             - name: Greeting Step
               run: echo "Hi ${{ inputs.name }} Welcome to Reusable Workflow"
+            - name: This is my secret
+              run: echo "My secret is ${{ secrets.my_secret }}"

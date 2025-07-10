@@ -6,3 +6,5 @@ jobs:
         uses: ./.github/workflows/reusable.yml
         with:
             name: "Hari Kammana"
+        secrets:
+            my_secret: ${{ secrets.MY_SECRET }}
