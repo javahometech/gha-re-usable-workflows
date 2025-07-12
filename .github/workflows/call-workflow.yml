@@ -8,3 +8,9 @@ jobs:
             name: "Hari Kammana"
         secrets:
             my_secret: ${{ secrets.MY_SECRET }}
+    output-test:
+        runs-on: ubuntu-latest
+        needs: call-greeting
+        steps:
+            - name: Print output
+              run: echo "This out is ${{ needs.call-greeting.outputs.version }}"
